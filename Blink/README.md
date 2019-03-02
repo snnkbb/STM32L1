@@ -1,15 +1,14 @@
 # STM32L152 Blink Project
 
-STM32L152RBT6 Discovery Board ¸zerindeki dahili ledler ile yap˝lan blink projesidir.
+STM32L152RBT6 Discovery Board √ºzerindeki dahili ledler ile yapƒ±lan blink projesidir.
 
 ##  
 
-Keil ile projeyi aÁt˝˝n˝zda "blink.c" iÁerisinde yard˝mc˝ olacak aÁ˝klamalar mevcuttur.
+Keil ile projeyi a√ßtƒ±ƒüƒ±nƒ±zda "blink.c" i√ßerisinde yardƒ±mcƒ± olacak a√ßƒ±klamalar mevcuttur.
 
-Discovery Board'un dahili debugger'˝ olup usb ¸zerinden bilgisayara balanabilmektedir.
-Projeyi build ettikten sonra cihaza y¸klemek iÁin "Options for Target" men¸s¸nden "Utilities" sekmesinden 
-"Use Debug Driver" ayarlanmal˝d˝r.
+Discovery Board'un dahili debugger'ƒ± olup usb √ºzerinden bilgisayara baƒülanabilmektedir.
+Projeyi build ettikten sonra cihaza y√ºklemek i√ßin "Options for Target" men√ºs√ºnden "Utilities" sekmesinden 
+"Use Debug Driver" ayarlanmalƒ±dƒ±r.
 
-> ARM programlamaya giri˛ iÁin Co˛kun Ta˛demir'in **ARM Programlama** video serisini izlemenizi ˆneririm.
-> https://www.youtube.com/watch?v=zVzIkYe9Y_Y&list=PLmkV2uU8kdpJiFKCq_j0Yz7s66muPd0sf
+> ARM programlamaya giri≈ü i√ßin Co≈ükun Ta≈üdemir'in [**ARM Programlama**](https://www.youtube.com/watch?v=zVzIkYe9Y_Y&list=PLmkV2uU8kdpJiFKCq_j0Yz7s66muPd0sf) video serisini izlemenizi √∂neririm.
 
