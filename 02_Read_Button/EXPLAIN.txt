@@ -1,0 +1,26 @@
+###############
+# Read_Button #
+###############
+
+Proje Amaci:
+	STM32L152RBT6 Discovery Board uzerinde bulunan USER butonu ile board uzerinde bulunan ledin kontrolunu icerir.
+	
+	
+Main ve Metodlarin Aciklamalari:
+> main metodunda ilk basta board uzerinde bulunan buton ve led tanimlanmaktadir.
+
+> 'SystemCoreClockConfigure' ve 'SystemCoreClockUpdate' metodlari ile mikro denetleyicinin clock ayarlari yapilmaktadir.
+
+> 'Enable_GPIO_Clock' metodu portu aktif etmek icin kullanildi
+. A ve B portlari clock sinyaline bagli oldugu icin aktif etmek icin bu portlara ait 'clock enable register' biti set edilmelidir.
+. Bknz: Reference Manuel -> Reset and clock control -> AHB peripheral clock enable register (RCC_AHBENR)
+
+> 'LED_Initialize' ve 'Buttons_Initialize' metodlari board uzerinde bulunan led ve butonlara ait konfigurasyonlari yapmaktadir.
+. ilgili GPIO'lara ait register'lar düzenlenerek istenilen sekilde ayarlaniyor.
+. Bknz: Reference Manuel -> General-purpose I/Os (GPIO) -> GPIO registers
+
+> 'Buttons_GetState' metodu ile butonun bagli oldugu A portunun IDR register'i okunarak buton durumu degiskene ataniyor.
+. IDR = input data register -> giris degerlerini okumak icin kullanilmaktadir.
+
+> Buton durum degiskenine gore 'LED_On' veya 'LED_Off' metodlari ile led durumu kontrol ediliyor.
+. 'LED_On' veya 'LED_Off' metodlari GPIO'nun BSRR(bit set/reset register)'yi kontrol ederek ledi yakip sondurmektedir.
