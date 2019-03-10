@@ -1,0 +1,28 @@
+################
+# FLOWING LEDS #
+################
+
+Proje Amaci:
+	STM32L152RBT6 Discovery Board ile A portunun 6 pini kullanilarak yapilan kayan led uygulamasidir.
+	
+Sabitler:
+	msTicks		  -> Delay fonksiyonu için kullaniliyor. Her 1ms'de bir artar.
+	LEDS[] dizisi -> Ledlerin bagli oldugu pinleri gosterir.
+	LED_NUMBER    -> Toplam led sayisini gosterir.
+	_DELAY_TIME   -> Ledlerin yanip sonme suresini gosterir.
+	
+Main ve Metodlarin Aciklamalari:
+> 'SystemCoreClockConfigure' ve 'SystemCoreClockUpdate' metodlari cagirilarak sistem clock ayarlari yapilmaktadir.
+
+> 'GPIOA_Initialize' metodu cagirilarak A portuna bagli olan clock hattini aktif etmektedir.
+
+> 'GPIOA_LED_Initialize' metodu ile A portunun giris cikis ayarlari yapilmaktadir.
+. Bu fonksiyon for dongusu kullnarak en basta tanimlanmis olan LEDS dizisi icerisindeki pin numaralarini 'LED_Initialize' metodu ile cikis olarak ayarlamaktadir.
+. 'LED_Initialize' metodunda bit islemleri kullanilarak GPIOA registerlerinin ilgili bolumleri ayarlanmaktadir.
+
+> 'if (SysTick_Config(SystemCoreClock / 100))' satiri ile clock ayarlari kontrol edilmektedir.
+
+> Sonsuz dongu icerisinde 'FlowLeftToRight' ledleri soldan saga (kucukten buyuge), 'FlowRightToLeft' sagdan sola (buyukten kucuge) yakip sondurmektedir.
+. 'FlowLeftToRight' metodu ile 'FlowRightToLeft' metodunun calisma mantigi aynidir.
+. Bu metotlarda 'LED_On' veya 'LED_Off' metotlari GPIO'nun BSRR(bit set/reset register)'yi kontrol ederek ledi yakip sondurmektedir.
+
